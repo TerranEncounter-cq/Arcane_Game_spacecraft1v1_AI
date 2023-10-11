@@ -1,7 +1,7 @@
 import pygame
 import os
 import sys
-
+pygame.init()
 pygame.font.init()
 pygame.mixer.init()
 
@@ -133,7 +133,7 @@ def yellow_handle_movement(keys_pressed, yellow, yellow_cur_vel, VELOCITY):
 
 def red_handle_movement(keys_pressed, red, red_cur_vel, VELOCITY):
     if red_cur_vel < VELOCITY:
-        red_cur_vel += 1.7 * ACC * VELOCITY 
+        red_cur_vel += 20 * ACC * VELOCITY 
         
     if keys_pressed[pygame.K_LEFT] and red.x - red_cur_vel > BORDER.x + BORDER.width: #LEFT
         red.x -= red_cur_vel
@@ -162,7 +162,7 @@ def handle_weapon(yellow_bullets, red_bullets, yellow, red, VELOCITY):
         if bullet.x > WIDTH:
             yellow_bullets.remove(each)
     
-    for bullet, cur_vel in red_bullets:
+    for each in red_bullets:
         bullet = each[0]
         cur_vel = each[1]
         bullet.x -= cur_vel
@@ -183,8 +183,6 @@ def handle_spacecraft_acceleration(spacecraft, cur_vel, VELOCITY):
         cur_vel -= 0 * ACC * VELOCITY
 
 def main():
-    pygame.init()
-
     yellow_HB = HealthBar(10, 15, 250, 20, 10)
     red_HB = HealthBar(WIDTH - 300 + 40, 15, 250, 20, 10)
     yellow = pygame.Rect(100, 300, SPACESHIP_WIDTH, SPACESHIP_HEIGHT)
