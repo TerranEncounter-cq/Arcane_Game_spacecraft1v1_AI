@@ -1,0 +1,3 @@
+improve physics and inertia
+rocket explotion
+evade (avoid damage)
