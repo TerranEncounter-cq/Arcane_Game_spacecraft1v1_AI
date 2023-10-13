@@ -10,7 +10,7 @@ Simple arcane game programmed using Pygame
     - S - move down
     - D - move right
   - Weapon:
-    - Lazer - Left Control
+    - Minigun - Left Control
     - Rocket - Left Shift
 
 **Red player** (right hand side): 
@@ -20,7 +20,7 @@ Simple arcane game programmed using Pygame
     - ↓ - move down
     - → - move right
   - Weapon:
-    - Lazer - Right Control
+    - Minigun - Right Control
     - Rocket - Right Shift
 
 ## Patchnote:

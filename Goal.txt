@@ -1,3 +1,31 @@
-improve physics and inertia
-rocket explotion
-evade (avoid damage)
+improve physics and inertia (done)
+rocket explotion (not yet)
+evade (avoid damage) (not yet)
+
+Reinforcement Learning AI player:
+    Action: movement: (W, A, S, D) ->
+        - ""[1, 0, 0, 0, 0]: stay
+        - W [0, 1, 0, 0, 0]: up 
+        - A [0, 0, 1, 0, 0]: left
+        - S [0, 0, 0, 1, 0]: down
+        - D [0, 0, 0, 0, 1]: right
+
+    Weapon: minigun (LCTRL)
+            rocket (LSHIRT) ->
+        - ""     [1, 0, 0]
+        - LCTRL  [0, 1, 0]
+        - LSHIFT [0, 0, 1]
+    
+    Reward: damage caused (the higher the better)
+            damage received (the lower the better)
+            winning time (the shorter the better given the game won)
+            Lose (penalty)
+    
+    agent(self)
+    get_status():
+        game_status (initial, ongoing, finished)
+        health_self, health_rival
+        coordinates_self, coordinates_rival,
+        bullets_self, bullets_self_rival,
+        rocket_self, rocket_rival,
+
